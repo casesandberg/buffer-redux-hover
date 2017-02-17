@@ -6,20 +6,20 @@ Keep react component hover state in redux
 
 ## Usage
 
-Combine the reducer under the `hover` state tree
+Combine the reducer under the `hover` state tree:
 
 ```js
 import { combineReducers } from 'redux';
-import { reducer } from '@bufferapp/redux-hover';
+import { reducer as hover } from '@bufferapp/redux-hover';
 
 const app = combineReducers({
-  hover: reducer, // important to have this under the hover state tree
+  hover, // important to have this under the hover state tree
 });
 
 export default app;
 ```
 
-Create a component that has a `hovered`, `onMouseEnter` and `onMouseLeave` prop.
+Create a component that has a `hovered`, `onMouseEnter` and `onMouseLeave` prop:
 
 ```js
 import React, { PropTypes } from 'react';
@@ -43,10 +43,10 @@ MyComponent.propTypes = {
   onMouseLeave: PropTypes.func,
 };
 
-export default TestComponent;
+export default MyComponent;
 ```
 
-Wrap `MyComponent` with the `Hoverable` component. Make sure you set and `id`.
+Wrap `MyComponent` with the `Hoverable` component. Make sure you set and `id`:
 
 ```js
 import React from 'react';
@@ -70,7 +70,7 @@ export default App;
 
 ### hovered prop
 
-the hovered prop is set to `true` on `MyComponent` when the mouse is hovering it. Otherwise it's set to false.
+The hovered prop is set to `true` on `MyComponent` when the mouse is hovering over it. Otherwise it's set to false.
 
 ### Choosing Id's
 
